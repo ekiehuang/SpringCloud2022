@@ -20,10 +20,10 @@ public class PaymentController {
     String port;
 
     @PostMapping(value = "/payment/create")
-    public CommonResult<Payment> create(@RequestBody Payment payment){
+    public CommonResult<Payment> create(@RequestBody Payment payment) {
         int result = paymentService.create(payment);
         log.info("***插入结果：" + result);
-        if(result > 0) {
+        if (result > 0) {
             return new CommonResult(200, "插入数据库成功", result);
         } else {
             return new CommonResult(444, "插入数据库失败", null);
@@ -43,8 +43,17 @@ public class PaymentController {
     }
 
     @GetMapping(value = "/payment/feign/timeout")
-    public String paymentFeignTimeout(){
-        try { TimeUnit.SECONDS.sleep(3); }catch (Exception e) {e.printStackTrace();} //单位秒
+    public String paymentFeignTimeout() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } //单位秒
+        return port;
+    }
+
+    @GetMapping
+    public String returnPort() {
         return port;
     }
 

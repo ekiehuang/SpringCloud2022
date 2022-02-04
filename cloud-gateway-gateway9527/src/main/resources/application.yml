@@ -14,6 +14,8 @@ spring:
           uri: lb://cloud-payment-service
           predicates:
             - Path=/payment/get/**   #断言,路径相匹配的进行路由
+            #            - After=2022-02-04T11:39:02.815-08:00[America/Los_Angeles]
+        #            - Cookie=username,atguigu
 
         - id: payment_routh2
           #          uri: http://localhost:8001
