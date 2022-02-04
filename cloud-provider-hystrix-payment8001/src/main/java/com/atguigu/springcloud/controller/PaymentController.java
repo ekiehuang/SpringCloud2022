@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.Controller;
+package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
